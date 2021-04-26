@@ -1,0 +1,51 @@
+.why {
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 341px);
+    grid-gap: 38px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &__item {
+    position: relative;
+    padding-left: 32px;
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -12px;
+      left: 10px;
+      width: 104px;
+      height: 64px;
+      background: url('../images/icon-why.svg') center/contain no-repeat;
+    }
+  }
+  &-item {
+    &__num {
+      position: absolute;
+      top: -4px;
+      left: 0;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 110%;
+      &:before {
+        content: attr(data-count);
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        opacity: 0.3;
+        background: linear-gradient(259.96deg, #40d381 -1.14%, #43a3b7 40.93%, #292cc8 105.21%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    &__title {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 130%;
+    }
+  }
+}

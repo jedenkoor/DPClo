@@ -1,0 +1,109 @@
+.services {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, calc(33.33% - 10px));
+    grid-gap: 15px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid $blue-border-color;
+  }
+  &-item {
+    &__img {
+      width: 100%;
+      height: 178px;
+      object-fit: cover;
+    }
+    &__title {
+      height: 62px;
+      margin-top: 35px;
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 31px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    &__text {
+      margin-bottom: 35px;
+      ul {
+        list-style: disc;
+        padding-left: 18px;
+        li {
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    &__btn {
+      margin-top: auto;
+      padding: 13px 0;
+    }
+  }
+  &__form {
+    position: relative;
+    margin-top: 30px;
+    padding: 29px 0;
+    background: linear-gradient(
+      79.8deg,
+      rgba(64, 211, 129, 0.05) -10.18%,
+      rgba(67, 163, 183, 0.05) 24%,
+      rgba(41, 44, 200, 0.05) 102.29%
+    );
+  }
+  &-form {
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+    }
+    &:before {
+      top: 0;
+      background: linear-gradient(
+        259.96deg,
+        rgba(41, 44, 200, 0.18) -1.79%,
+        rgba(65, 198, 143, 0.297882) 25.52%,
+        rgba(67, 166, 179, 0.317943) 42.24%,
+        rgba(67, 163, 183, 0.32) 73.45%,
+        rgba(64, 211, 129, 0.29) 105.21%
+      );
+      opacity: 0.8;
+    }
+    &:after {
+      bottom: 0;
+      background: linear-gradient(
+        259.96deg,
+        rgba(64, 211, 129, 0.15) -0.63%,
+        rgba(67, 163, 183, 0.15) 40.93%,
+        rgba(41, 44, 200, 0.15) 99.9%
+      );
+    }
+    &__container {
+      display: flex;
+      align-items: center;
+    }
+    &__text {
+      margin: 0;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 130%;
+    }
+    &__arr {
+      flex: 1;
+      margin: 0 52px;
+    }
+    &__btn {
+      padding: 13px 26px;
+    }
+  }
+}

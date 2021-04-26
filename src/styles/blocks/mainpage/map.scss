@@ -1,0 +1,32 @@
+.map {
+  position: relative;
+  &__container {
+    position: relative;
+  }
+  &__block {
+    height: 408px;
+    .ymaps-2-1-78-copyrights-pane,
+    .ymaps-2-1-78-controls-pane {
+      display: none;
+    }
+  }
+  &__info {
+    position: absolute;
+    bottom: 15px;
+    left: 31px;
+    width: 296px;
+    padding: 35px 50px 35px 35px;
+    background: #fefefe;
+    border-radius: 4px;
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+  }
+  &__text {
+    margin-bottom: 27px;
+  }
+}

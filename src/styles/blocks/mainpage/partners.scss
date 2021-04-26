@@ -1,0 +1,91 @@
+.partners {
+  &__content {
+    position: relative;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        58.11deg,
+        rgba(64, 211, 129, 0.15) 2.1%,
+        rgba(67, 163, 183, 0.15) 15.29%,
+        rgba(41, 44, 200, 0.15) 88.23%
+      );
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    list-style: none;
+  }
+  &__item {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 1px;
+      background: linear-gradient(
+        181.3deg,
+        rgba(64, 211, 129, 0.15) -1.32%,
+        rgba(67, 163, 183, 0.15) 10.38%,
+        rgba(41, 44, 200, 0.15) 97.79%
+      );
+    }
+    &:first-child {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 1px;
+        background: linear-gradient(
+          181.3deg,
+          rgba(64, 211, 129, 0.15) -1.32%,
+          rgba(67, 163, 183, 0.15) 10.38%,
+          rgba(41, 44, 200, 0.15) 97.79%
+        );
+      }
+    }
+    &:nth-child(2n + 1) {
+      background: linear-gradient(
+        68.3deg,
+        rgba(64, 211, 129, 0.02) -9.65%,
+        rgba(67, 163, 183, 0.02) 4.28%,
+        rgba(41, 44, 200, 0.02) 96.78%
+      );
+    }
+  }
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 163px;
+    &:hover,
+    &:focus {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: linear-gradient(272.56deg, #40d381 -48.53%, #43a3b7 18.26%, #292cc8 120.29%);
+      }
+    }
+  }
+}

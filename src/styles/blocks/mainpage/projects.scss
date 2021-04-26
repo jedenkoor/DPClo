@@ -1,0 +1,112 @@
+.projects {
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  &__navigation {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-navigation {
+    &__item {
+      margin-right: 30px;
+      label {
+        display: flex;
+        cursor: pointer;
+        &:hover span {
+          color: $primary-color;
+        }
+      }
+      input {
+        &:checked + span {
+          border-bottom: 1px solid $neutral-color-1;
+        }
+        &:focus + span {
+          color: $primary-color;
+        }
+      }
+      span {
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+  }
+  &__btn {
+    padding: 8px 18px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, calc(33.33% - 10px));
+    grid-gap: 15px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    border: 1px solid $neutral-color-7;
+  }
+  &-item {
+    &__link {
+      padding: 15px;
+      &:hover {
+        .projects-item__btn {
+          background-color: $blue-light-color;
+        }
+      }
+      &:focus {
+        .projects-item__btn {
+          background-color: $primary-color;
+          background-image: url('../images/icon-arr-focus.svg');
+        }
+      }
+    }
+    &__wrap {
+      position: relative;
+      display: block;
+      margin-bottom: 24px;
+      padding-bottom: 100%;
+    }
+    &__img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &__brand {
+      display: block;
+      margin-bottom: 9px;
+    }
+    &__title {
+      height: 78px;
+      margin-top: 0;
+      margin-bottom: 48px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 130%;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    &__btn {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 50px;
+      height: 50px;
+      transition: 0.1s;
+      background-color: #fff;
+      background-image: url('../images/icon-arr.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      border-top: 1px solid $neutral-color-7;
+      border-left: 1px solid $neutral-color-7;
+    }
+  }
+}
