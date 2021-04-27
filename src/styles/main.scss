@@ -36,12 +36,6 @@ html.compensate-for-scrollbar {
   @-moz-document url-prefix() {
     margin-right: 17px;
   }
-  .header {
-    padding-right: 4px;
-    @-moz-document url-prefix() {
-      padding-right: 17px;
-    }
-  }
 }
 
 body {
@@ -149,6 +143,12 @@ input[type='number'] {
     box-shadow: 0 0 0px 1000px #fff inset;
     -webkit-box-shadow: 0 0 0px 1000px #fff inset;
     transition: background-color 5000s ease-in-out 0s;
+  }
+  &.input-err {
+    border: 1px solid $accents-error-color;
+  }
+  &.input-border {
+    border: 1px solid $blue-border-color;
   }
   &:hover,
   &:focus {
@@ -264,6 +264,7 @@ input[type='number'] {
 
 @import 'blocks/common/header';
 @import 'blocks/common/footer';
+@import 'blocks/common/popup';
 @import 'blocks/mainpage/banner';
 @import 'blocks/mainpage/services';
 @import 'blocks/mainpage/projects';

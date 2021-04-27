@@ -37,10 +37,17 @@
   &-navigation {
     &__item {
       margin-right: 41px;
+      &:first-child:last-child .about-navigation__btn {
+        border-bottom: 1px solid transparent !important;
+        color: $neutral-color-1 !important;
+        cursor: auto;
+      }
     }
     &__btn {
       padding: 0;
+      padding-bottom: 6px;
       border: none;
+      border-bottom: 1px solid transparent;
       background: none;
       font-weight: 500;
       font-size: 20px;
@@ -51,7 +58,6 @@
         color: $primary-color;
       }
       &.tabs__btn--active {
-        padding-bottom: 6px;
         color: $primary-color;
         border-bottom: 1px solid $primary-color;
       }

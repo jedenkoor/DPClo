@@ -1,3 +1,20 @@
+.overlay {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 200vh;
+  background-color: rgba(26, 26, 26, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s linear, opacity 0.2s linear;
+  }
+}
+
 .header {
   position: relative;
   padding: 21px 0 22px;

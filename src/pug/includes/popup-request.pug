@@ -1,0 +1,74 @@
+form.popup.popup--request(action="#" data-popup="request") 
+  button.popup__close 
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.3637 5.63623L11.9997 12.0002M11.9997 12.0002L5.63574 18.3642M11.9997 12.0002L18.3637 18.3642M11.9997 12.0002L5.63574 5.63623" stroke="black"/>
+    </svg>
+  .popup__content
+    <!--h4 class="popup__title">Ваша заявка успешно отправлена. Ожидайте звонка специалиста!</h4-->
+    <!--h4 class="popup__title">Произошла ошибка, попробуйте позже.</h4-->
+    h4.popup__title Оформление заявки
+    .popup__text Введите данные и мы с вами свяжемся
+    .popup__select.popup-select.select
+      button.popup-select__open.select-open
+        | Тип услуги:
+        span Полный цикл производства одежды
+      ul.popup-select__block.select-block
+        li.popup-select__item
+          label
+            input.visually-hidden(type="radio" name="request" value="Полный цикл производства одежды" checked)
+            span.popup-select__btn.select-item  Полный цикл производства одежды
+        li.popup-select__item
+          label
+            input.visually-hidden(type="radio" name="request" value="Разработка технической документации")
+            span.popup-select__btn.select-item  Разработка технической документации
+        li.popup-select__item 
+          label
+            input.visually-hidden(type="radio" name="request" value="Разработка дизайна")
+            span.popup-select__btn.select-item  Разработка дизайна
+        li.popup-select__item
+          label
+            input.visually-hidden(type="radio" name="request" value="Производство")
+            span.popup-select__btn.select-item  Производство
+    input.popup__input.input(type="text" placeholder="Имя" data-required)
+    input.popup__input.input(type="tel" placeholder="Телефон" data-type="tel")
+    input.popup__input.input(type="email" placeholder="E-mail" data-type="email")
+    textarea.popup__textarea.textarea(placeholder="Описание" data-type="textarea")
+    .popup__file.popup-file
+      .popup-file__top
+        label
+          input.visually-hidden(type="file" multiple)
+          span.btn-tertiary Выбрать файл(-ы)
+        span Файл(-ы) не выбран(-ы)
+    .popup__file.popup-file
+      .popup-file__top
+        label
+          input.visually-hidden(type="file" multiple)
+          span.btn-tertiary Выбрать файл(-ы)
+      ul.popup-file__list
+        li.popup-file__item 
+          | Балет на льду Парижская певица новый год 3020.jpg
+          button.popup-file__delete 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.80005 8.7998L15.2 15.1998M8.80005 15.1998L15.2 8.7998" stroke="#5C5C5C"/>
+            </svg>
+    .popup__file.popup-file
+      .popup-file__top
+        label
+          input.visually-hidden(type="file" multiple)
+          span.btn-tertiary Выбрать файл(-ы)
+        button Удалить все файлы
+      ul.popup-file__list
+        li.popup-file__item 
+          | Балет на льду Парижская певица новый год 3020.jpg Балет на льду Парижская певица новый год 3020.jpg
+          button.popup-file__delete 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.80005 8.7998L15.2 15.1998M8.80005 15.1998L15.2 8.7998" stroke="#5C5C5C"/>
+            </svg>
+        li.popup-file__item 
+          | Балет на льду Парижская певица новый год 3020.jpg
+          button.popup-file__delete 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.80005 8.7998L15.2 15.1998M8.80005 15.1998L15.2 8.7998" stroke="#5C5C5C"/>
+            </svg>
+    .contacts__agree Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+    button.contacts__btn.btn-primary(type="submit") Отправить

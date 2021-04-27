@@ -1,0 +1,207 @@
+.popup {
+  position: fixed;
+  z-index: 30;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $neutral-color-10;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  max-width: 640px;
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s linear, opacity 0.2s linear;
+  }
+  &__close {
+    position: fixed;
+    z-index: 2;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background: rgba(61, 61, 59, 0.07);
+    }
+    &:focus {
+      background: rgba(61, 61, 59, 0.12);
+    }
+  }
+  &__content {
+    max-height: 95vh;
+    padding: 60px;
+    overflow-y: auto;
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+  }
+  &__text {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  &__select {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  &-select {
+    &__open {
+      position: relative;
+      width: 100%;
+      padding: 10px 13px;
+      background: none;
+      border: 1px solid $blue-border-color;
+      border-radius: 4px;
+      color: $neutral-color-4;
+      font-weight: 300;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 0.1s;
+      &:hover,
+      &:focus,
+      &.active {
+        border-color: $primary-color;
+      }
+      &.active:before {
+        top: 18px;
+        transform: rotate(-45deg) scale(-1);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        transform: rotate(-45deg);
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid $neutral-color-4;
+        border-bottom: 1px solid $neutral-color-4;
+        transition: 0.1s;
+      }
+      span {
+        margin-left: 5px;
+        color: $neutral-color-1;
+        text-transform: lowercase;
+      }
+    }
+    &__block {
+      position: absolute;
+      top: 100%;
+      display: none;
+      width: 100%;
+      padding-left: 0;
+      list-style: none;
+      background: #ffffff;
+      box-shadow: 0px 4px 10px rgba(28, 28, 28, 0.04);
+      border-radius: 4px;
+      overflow: hidden;
+      &.active {
+        display: block;
+      }
+    }
+    &__item {
+      input:focus + .popup-select__btn,
+      input:checked + .popup-select__btn {
+        background: $blue-light-color;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $blue-border-color;
+      }
+    }
+    &__btn {
+      display: block;
+      width: 100%;
+      padding: 11px 14px;
+      background: none;
+      border: none;
+      text-align: left;
+      font-weight: 300;
+      cursor: pointer;
+      &:hover,
+      &:focus,
+      &--active {
+        background: $blue-light-color;
+      }
+    }
+  }
+  &__input {
+    width: 100%;
+    height: 43px;
+    margin-bottom: 15px;
+  }
+  &__textarea {
+    width: 100%;
+    height: 148px;
+    min-height: 148px;
+  }
+  &-file {
+    &__top {
+      padding-top: 10px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid $blue-border-color;
+      &:first-child:last-child {
+        border: none;
+      }
+      label {
+        input:focus + span {
+          border-color: $primary-color;
+        }
+        span {
+          display: inline-block;
+          margin-right: 11px;
+          padding: 6px 22px;
+        }
+      }
+      > button {
+        padding: 0;
+        background: none;
+        border: none;
+        font-weight: 300;
+        color: $neutral-color-2;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+          color: $primary-color;
+        }
+      }
+    }
+    &__list {
+      padding-left: 0;
+      list-style: none;
+    }
+    &__item {
+      position: relative;
+      padding: 4px 0;
+      border-bottom: 1px solid $blue-border-color;
+      color: $neutral-color-2;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    &__delete {
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      &:hover path,
+      &:focus path {
+        stroke: $primary-color;
+      }
+    }
+  }
+}

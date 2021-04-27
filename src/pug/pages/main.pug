@@ -10,7 +10,7 @@ block content
         h1.banner__title Разработка одежды <span class="hint">«под ключ»</span>
         p.banner__text Мы воплотим любые Ваши идеи в реальность, работаем как над технологически сложными изделиями, так и над базовыми моделями
         .banner__row 
-          button.banner__btn.btn-primary.popup-btn(data-popup="callback") Оформить заявку
+          button.banner__btn.btn-primary.popup-btn(data-popup="request" data-services="Полный цикл производства одежды") Оформить заявку
           a.banner__btn.btn-secondary(href="#") Смотреть портфолио
       .banner__col
         picture
@@ -31,7 +31,7 @@ block content
               li конструкторская документация
               li технологическая документация
               li лекальная база
-          button.services-item__btn.btn-secondary.popup-btn(data-popup="callback") Оформить заявку
+          button.services-item__btn.btn-secondary.popup-btn(data-popup="request" data-services="Разработка технической документации") Оформить заявку
         li.services__item.services-item
           picture
             source(type="image/webp" srcset="images/services2.jpg")
@@ -42,7 +42,7 @@ block content
               li отрисовка эскизов по тех. заданию
               li разработка дизайна по тех. заданию
               li разработка макетов для принта и вышивки
-          button.services-item__btn.btn-secondary.popup-btn(data-popup="callback") Оформить заявку
+          button.services-item__btn.btn-secondary.popup-btn(data-popup="request" data-services="Разработка дизайна") Оформить заявку
         li.services__item.services-item
           picture
             source(type="image/webp" srcset="images/services3.jpg")
@@ -53,12 +53,12 @@ block content
               li проработка первичного образца по техническому заданию
               li разработка дизайна
               li производство тестового образца
-          button.services-item__btn.btn-secondary.popup-btn(data-popup="callback") Оформить заявку
+          button.services-item__btn.btn-secondary.popup-btn(data-popup="request" data-services="Производство") Оформить заявку
     .services__form.services-form
       .container.services-form__container
         p.services-form__text Есть потребность заказать услугу «под ключ»?
         .services-form__arr 
-        button.services-form__btn.btn-primary.popup-btn(data-popup="callback") Оставить контактные данные
+        button.services-form__btn.btn-primary.popup-btn(data-popup="request" data-services="Полный цикл производства одежды") Оставить контактные данные
 
   section.projects.margin-section 
     .container
@@ -119,15 +119,15 @@ block content
         li.why__item.why-item
           span.why-item__num(data-count="1") 1
           h3.why-item__title <span class="hint">Профессиональный</span> подход
-          p.why-item__text Процесс разработки и производства изделий и макетов, требует высоких компетенций специалистов из разных областей
+          p.why-item__text Процесс разработки и производства изделий и макетов, требует высоких компетенций специалистов из&nbsp;разных&nbsp;областей
         li.why__item.why-item
           span.why-item__num(data-count="2") 2
           h3.why-item__title <span class="hint">Быстрая</span> разработка
-          p.why-item__text Большой опыт и знания в области производства одежды и проработки образцов позволяют гибко реагировать на пожелания заказчиков в сжатые сроки
+          p.why-item__text Большой опыт и знания в области производства одежды и проработки образцов позволяют гибко реагировать на&nbsp;пожелания заказчиков в сжатые сроки
         li.why__item.why-item
           span.why-item__num(data-count="3") 3
           h3.why-item__title <span class="hint">Индивидуальный</span> подход
-          p.why-item__text Учитывая требования от заказчика, предлагаем свои решения отталкиваясь от полученного колоссального опыта
+          p.why-item__text Учитывая требования от заказчика, предлагаем свои решения отталкиваясь от&nbsp;полученного колоссального опыта
 
   section.partners.margin-section
     .container
@@ -171,37 +171,4 @@ block content
           source(type="image/webp" srcset="images/about-boy.png")
           img.about__img(src="images/about-boy.png" alt="О нас")
 
-  section.contacts.margin-section
-    .container
-      h2.h1title.contacts__title Оставьте заявку, и мы с вами свяжемся!
-      .contacts__content 
-        form.contacts__col(action="#") 
-          input.contacts__input.input(type="text" placeholder="Имя" data-required)
-          input.contacts__input.input(type="tel" placeholder="Телефон" data-type="tel")
-          input.contacts__input.input(type="email" placeholder="E-mail")
-          textarea.contacts__textarea.textarea(placeholder="Описание" data-type="textarea")
-          p.contacts__agree Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
-          button.contacts__btn.btn-primary(type="submit") Отправить
-        .contacts__col
-          p.contacts__subtitle Как с нами связаться?
-          .contacts__info.contacts-info
-            h4.contacts-info__title Электронная почта
-            a.contacts-info__link(href="mailto:info@dpclo.ru") info@dpclo.ru
-          .contacts__info.contacts-info
-            h4.contacts-info__title Номер телефона
-            a.contacts-info__link(href="tel:89602664070") +7 (960) 266-40-70
-          .contacts__info.contacts-info
-            h4.contacts-info__title Мессенджеры
-            ul.contacts-info__socials
-              li.contacts-info__social <!-- .contacts-info__sociallink--wp, .contacts-info__sociallink--inst-->
-                a.contacts-info__sociallink.contacts-info__sociallink--tg(href="#")
 
-  section.map.margin-section
-    .container.map__container
-      .map__block
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1ffc7466e7646ae41ad0c89d4c8256e1838db68874914df5b606db2bb26016ed&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
-      .map__info 
-        h4.map__title Адрес:
-        p.map__text Смольный проспект, дом 17, г. Санкт-Петербург
-        h4.map__title Время работы:
-        p.map__text Понедельник - воскресенье 13:00 - 21:00

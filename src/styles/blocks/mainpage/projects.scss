@@ -47,7 +47,7 @@
   &__item {
     position: relative;
     display: flex;
-    border: 1px solid $neutral-color-7;
+    border: 1px solid $blue-border-color;
   }
   &-item {
     &__link {
@@ -105,8 +105,8 @@
       background-image: url('../images/icon-arr.svg');
       background-position: center;
       background-repeat: no-repeat;
-      border-top: 1px solid $neutral-color-7;
-      border-left: 1px solid $neutral-color-7;
+      border-top: 1px solid $blue-border-color;
+      border-left: 1px solid $blue-border-color;
     }
   }
 }
