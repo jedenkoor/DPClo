@@ -1,4 +1,4 @@
-// import Swiper from 'swiper/swiper-bundle.js'
+import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.css'
 import IMask from 'imask'
 import noUiSlider from 'noUiSlider/distribute/nouislider.min.js'
@@ -31,6 +31,13 @@ class Init {
       this.actions().showBody()
       this.actions().scrollToBlockOnLoading()
     }, 300)
+
+    if (document.querySelectorAll('.case__slider').length) {
+      const caseSliders = document.querySelectorAll('.case__slider')
+      caseSliders.forEach((item) => {
+        this.actions().initCaseSlider(item)
+      })
+    }
   }
 
   events() {
@@ -312,6 +319,25 @@ class Init {
             })
           })
         }
+      },
+      initCaseSlider(el) {
+        const prevArr = el.querySelector('.swiper-button-prev')
+        const nextArr = el.querySelector('.swiper-button-next')
+        const pagination = el.querySelector('.swiper-pagination')
+        ;(() =>
+          new Swiper(el, {
+            loop: true,
+            spaceBetween: 15,
+            slidesPerView: 2,
+            navigation: {
+              prevEl: prevArr,
+              nextEl: nextArr
+            },
+            pagination: {
+              el: pagination,
+              clickable: true
+            }
+          }))()
       }
     }
   }

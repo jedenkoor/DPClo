@@ -1,0 +1,71 @@
+extends ../template
+
+block variables
+  - var title = 'Кейс'
+  - var breadrumbs = 1
+
+block content
+  section.case.margin-section 
+    .container
+      h1.h1title Парадно-спортивные костюмы
+      .case__content
+        .case__main 
+          .case__slider.case-slider.swiper-container
+            ul.case-slider__wrapper.swiper-wrapper
+              li.case-slider__slide.case-slider-slide.swiper-slide
+                picture
+                  source(type="image/webp" srcset="images/projects.jpg")
+                  img.case-slider-slide__img(src="images/projects.jpg" alt="Парадно-спортивные костюмы") 
+              li.case-slider__slide.case-slider-slide.swiper-slide
+                picture
+                  source(type="image/webp" srcset="images/projects2.jpg")
+                  img.case-slider-slide__img(src="images/projects2.jpg" alt="Парадно-спортивные костюмы") 
+              li.case-slider__slide.case-slider-slide.swiper-slide
+                picture
+                  source(type="image/webp" srcset="images/projects3.jpg")
+                  img.case-slider-slide__img(src="images/projects3.jpg" alt="Парадно-спортивные костюмы") 
+              li.case-slider__slide.case-slider-slide.swiper-slide
+                picture
+                  source(type="image/webp" srcset="images/projects.jpg")
+                  img.case-slider-slide__img(src="images/projects.jpg" alt="Парадно-спортивные костюмы") 
+              li.case-slider__slide.case-slider-slide.swiper-slide
+                picture
+                  source(type="image/webp" srcset="images/projects2.jpg")
+                  img.case-slider-slide__img(src="images/projects2.jpg" alt="Парадно-спортивные костюмы") 
+            .swiper-pagination
+            .swiper-button-prev
+            .swiper-button-next
+          .case__info.case-info.tabs
+            ul.about__navigation.about-navigation
+              li.about-navigation__item 
+                button.about-navigation__btn.tabs__btn.tabs__btn--active(data-tab="1") Задача
+              li.about-navigation__item 
+                button.about-navigation__btn.tabs__btn(data-tab="2") Процесс работы
+              li.about-navigation__item 
+                button.about-navigation__btn.tabs__btn(data-tab="3") Результат
+            .case-info__tab.case-info-tab.tabs__container.tabs__container--active(data-tab="1")
+              p Разнообразный и богатый опыт реализация намеченных плановых заданий позволяет оценить значение соответствующий условий активизации. Не следует, однако забывать, что постоянное информационно-пропагандистское. Таким образом начало повседневной работы по формированию позиции в значительной степени обуславливает создание модели развития.
+              p Равным образом новая модель организационной деятельности способствует подготовки и реализации систем массового участия. Постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение системы обучения кадров.
+            .case-info__tab.case-info-tab.tabs__container(data-tab="2")
+              ul 
+                li Равным образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации системы обучения кадров
+                li Не следует, однако забывать, что постоянное информационно-пропагандистское. Таким образом начало повседневной работы по формированию позиции в значительной степени обуславливает создание модели развития
+                li Таким образом начало повседневной работы по формированию позиции в этой степени обуславливает создание активизации роста и работы в морском море
+              p.case-info-tab__backgroundtext Разнообразный и богатый опыт реализация намеченных плановых заданий позволяет оценить значение соответствующий условий активизации. Не следует, однако забывать, что постоянное информационно-пропагандистское. Таким образом начало повседневной работы по формированию позиции в значительной степени обуславливает создание модели развития.
+            .case-info__tab.case-info-tab.tabs__container(data-tab="3")
+              p В результате Заказчик получил изделие полностью соответствующее его ожиданиям
+        aside.case__aside.case-aside
+          h3.case-aside__title Основная информация
+          ul.case-aside__content 
+            li.case-aside__item
+              h4.case-aside__subtitle Срок разработки: 
+              p.case-aside__text 30 дней
+            li.case-aside__item
+              h4.case-aside__subtitle Заказчик: 
+              p.case-aside__text <span>_levitacia^</span>
+            li.case-aside__item
+              h4.case-aside__subtitle Услуга: 
+              p.case-aside__text разработка дизайна
+            li.case-aside__item
+              h4.case-aside__subtitle Кол-во единиц: 
+              p.case-aside__text 150
