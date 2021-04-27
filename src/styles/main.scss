@@ -263,6 +263,7 @@ input[type='number'] {
 }
 
 @import 'blocks/common/header';
+@import 'blocks/common/breadcrumbs';
 @import 'blocks/common/footer';
 @import 'blocks/common/popup';
 @import 'blocks/mainpage/banner';
@@ -273,3 +274,4 @@ input[type='number'] {
 @import 'blocks/mainpage/about';
 @import 'blocks/mainpage/contacts';
 @import 'blocks/mainpage/map';
+@import 'blocks/otherpages/portfolio';

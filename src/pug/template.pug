@@ -18,6 +18,8 @@ html(lang="ru")
   body(style="opacity: 0")
     .wrapper
       include includes/header.pug
+      if(breadrumbs == 1)
+        include includes/breadrumbs.pug
       main.content
         block content
         include includes/bot-page.pug

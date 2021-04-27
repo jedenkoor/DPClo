@@ -1,0 +1,34 @@
+.breadcrumbs {
+  margin-top: 25px;
+  margin-bottom: 55px;
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  &__item {
+    &:not(:last-child) {
+      display: flex;
+      align-items: center;
+      &:after {
+        content: '/';
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 130%;
+        margin: 0 9px;
+      }
+    }
+  }
+  &__link {
+    &:not(a) {
+      color: $neutral-color-5;
+    }
+    &:not(:not(a)) {
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+    }
+  }
+}

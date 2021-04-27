@@ -44,10 +44,11 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "gsap": "^3.6.0",
     "imask": "^6.0.7",
     "normalize.css": "^8.0.1",
-    "swiper": "^6.5.6",
-    "gsap": "^3.6.0",
-    "scrollmagic": "^2.0.8"
+    "nouislider": "^14.7.0",
+    "scrollmagic": "^2.0.8",
+    "swiper": "^6.5.6"
   }
 }

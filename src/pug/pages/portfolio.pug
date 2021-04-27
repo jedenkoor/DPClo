@@ -1,0 +1,124 @@
+extends ../template
+
+block variables
+  - var title = 'Портфолио'
+  - var breadrumbs = 1
+
+block content
+  section.portfolio.margin-section 
+    .container
+      h1.h1title Портфолио
+      p.portfolio__text У всех нас свои предпочтения, вкусы и привычки, но каждому хочется быть стильным и ярким. Изделия созданные нами с нуля достаточно износостойкие и становятся эталоном качества для других.
+      .portfolio__content 
+        aside.portfolio__filter.portfolio-filter
+          .portfolio-filter__top
+            h3.portfolio-filter__title Фильтры поиска
+            button.portfolio-filter__reset(type="reset") Сбросить
+          .portfolio-filter__category 
+            h4.portfolio-filter__subtitle Сортировать
+            ul.portfolio-filter__items 
+              li.portfolio-filter__item
+                label.portfolio-filter__label 
+                  input.visually-hidden(type="radio" name="sort" value="Сначала новые")
+                  span Сначала новые
+              li.portfolio-filter__item
+                label.portfolio-filter__label 
+                  input.visually-hidden(type="radio" name="sort" value="Сначала старые" checked)
+                  span Сначала старые
+          .portfolio-filter__category 
+            h4.portfolio-filter__subtitle Категории
+            ul.portfolio-filter__items 
+              li.portfolio-filter__item
+                label.portfolio-filter__label 
+                  input.visually-hidden(type="checkbox" name="category")
+                  span Базовая
+              li.portfolio-filter__item
+                label.portfolio-filter__label 
+                  input.visually-hidden(type="checkbox" name="category")
+                  span Концептуальная
+              li.portfolio-filter__item
+                label.portfolio-filter__label 
+                  input.visually-hidden(type="checkbox" name="category" checked)
+                  span Парадно-спортивные костюмы
+          .portfolio-filter__category 
+            h4.portfolio-filter__subtitle Компании
+            ul.portfolio-filter__items 
+              li.portfolio-filter__item
+                label.portfolio-filter__label 
+                  input.visually-hidden(type="checkbox" name="company")
+                  span ХК "Красная звезда"
+              li.portfolio-filter__item
+                label.portfolio-filter__label 
+                  input.visually-hidden(type="checkbox" name="company")
+                  span ХК "Невские барсы"
+              li.portfolio-filter__item
+                label.portfolio-filter__label 
+                  input.visually-hidden(type="checkbox" name="company" checked)
+                  span Internation
+              li.portfolio-filter__item
+                label.portfolio-filter__label 
+                  input.visually-hidden(type="checkbox" name="company")
+                  span Levitacia
+          .portfolio-filter__category 
+            h4.portfolio-filter__subtitle Временной промежуток
+            .portfolio-filter__range.portfolio-filter-range
+              .portfolio-filter-range__row 
+                .portfolio-filter-range__col
+                  span от
+                  input.portfolio-slider-from(type="text" placeholder="2017")
+                  span г
+                .portfolio-filter-range__col
+                  span до
+                  input.portfolio-slider-to(type="text" placeholder="2021")
+                  span г
+              .portfolio-filter-range__slider.portfolio-slider(data-min="2017" data-max="2021" data-step="1")
+        .portfolio__wrapper 
+          ul.portfolio__items
+            li.portfolio__item.portfolio-item
+              a.portfolio-item__link(href="#")
+                .portfolio-item__picture 
+                  picture
+                    source(type="image/webp" srcset="images/projects.jpg")
+                    img.portfolio-item__img(src="images/projects.jpg" alt="Коллекция “Classic”") 
+                  ul.portfolio-item__tags
+                    li.portfolio-item__tag Разработка дизайна
+                .portfolio-item__info 
+                  h3.portfolio-item__title Коллекция “Classic” 
+                  p.portfolio-item__text Срок разработки: 15 дней
+                  p.portfolio-item__text Заказчик: INTERNATION
+                  p.portfolio-item__btn Подробнее
+            -for(i = 0; i < 3; i++)
+              li.portfolio__item.portfolio-item
+                a.portfolio-item__link(href="#")
+                  .portfolio-item__picture 
+                    picture
+                      source(type="image/webp" srcset="images/projects3.jpg")
+                      img.portfolio-item__img(src="images/projects3 .jpg" alt="Коллекция “Classic”") 
+                    ul.portfolio-item__tags
+                      li.portfolio-item__tag Разработка дизайна + производство
+                  .portfolio-item__info 
+                    h3.portfolio-item__title Школьная форма
+                    p.portfolio-item__text Срок разработки и производства: 40 дней
+                    p.portfolio-item__text Заказчик: <span>образование.ru </span>
+                    p.portfolio-item__btn Подробнее
+          ul.portfolio__pagination.portfolio-pagination
+            li.portfolio-pagination__item 
+              .portfolio-pagination__link.portfolio-pagination__link--arr 
+                <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.5 5.70898L5.5 8.95427L8.5 12.1996" stroke="#1A1A1A" stroke-linecap="square"/>
+                </svg>
+            li.portfolio-pagination__item 
+              .portfolio-pagination__link.portfolio-pagination__link--active 1
+            li.portfolio-pagination__item 
+              a.portfolio-pagination__link(href="#") 2
+            li.portfolio-pagination__item 
+              a.portfolio-pagination__link(href="#") 3
+            li.portfolio-pagination__item 
+              .portfolio-pagination__link ...
+            li.portfolio-pagination__item 
+              a.portfolio-pagination__link(href="#") 20
+            li.portfolio-pagination__item 
+              a.portfolio-pagination__link.portfolio-pagination__link--arr(href="#") 
+                <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 12.1996L9.5 8.9543L6.5 5.70898" stroke="#1A1A1A" stroke-linecap="square"/>
+                </svg>

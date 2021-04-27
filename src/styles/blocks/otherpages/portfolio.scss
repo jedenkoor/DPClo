@@ -1,0 +1,283 @@
+.portfolio {
+  &__text {
+    max-width: 900px;
+    margin-bottom: 40px;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: 253px calc(100% - 294px);
+    grid-gap: 41px;
+  }
+  &-filter {
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 41px;
+    }
+    &__title {
+      margin: 0;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 130%;
+    }
+    &__reset {
+      padding: 0;
+      background: none;
+      border: none;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 130%;
+      color: $neutral-color-5;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+    }
+    &__category {
+      margin-bottom: 31px;
+    }
+    &__subtitle {
+      margin-top: 0;
+      margin-bottom: 19px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid $blue-border-color;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+    }
+    &__items {
+      padding-left: 0;
+      list-style: none;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+    &__label {
+      display: block;
+      width: fit-content;
+      cursor: pointer;
+      &:hover {
+        color: $primary-color;
+      }
+      input {
+        &:focus + span {
+          color: $primary-color;
+        }
+        &:checked + span:before {
+          content: '';
+          width: 5px;
+          height: 5px;
+          margin-right: 8px;
+          border-radius: 50%;
+          background: $neutral-color-1;
+        }
+      }
+      span {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &-range {
+      &__slider {
+        height: 3px;
+        border-radius: 3px;
+        margin-top: 10px;
+        padding-right: 16px;
+        border: none;
+        box-shadow: none;
+        background: $blue-border-color;
+        .noUi-connect {
+          background: $neutral-color-1;
+        }
+        .noUi-handle {
+          top: -7px;
+          right: -15px;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          box-shadow: none;
+          border-color: $neutral-color-1;
+          &:hover,
+          &:focus {
+            &:after {
+              display: block;
+            }
+          }
+          &:before,
+          &:after {
+            display: none;
+          }
+          &:after {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $neutral-color-1;
+          }
+        }
+      }
+      &__row {
+        display: flex;
+        justify-content: space-between;
+      }
+      &__col {
+        display: flex;
+        align-items: center;
+        input {
+          width: 40px;
+          height: 21px;
+          margin: 0 3px;
+          background: none;
+          border-radius: 4px;
+          border: none;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 130%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 7.5px));
+    grid-gap: 16px 15px;
+    padding-top: 10px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-item {
+    &__link {
+      &:hover .portfolio-item__title,
+      &:focus .portfolio-item__title {
+        color: $primary-color;
+      }
+      &:active .portfolio-item__btn:after {
+        transform: translateX(8px);
+      }
+    }
+    &__picture {
+      position: relative;
+      padding-bottom: 100%;
+    }
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &__tags {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0;
+      list-style: none;
+    }
+    &__tag {
+      margin-top: 10px;
+      padding: 6px 19px;
+      background: $neutral-color-10;
+      border-radius: 30px;
+    }
+    &__info {
+      padding: 26px 31px 28px 29px;
+    }
+    &__title {
+      position: relative;
+      margin-top: 0;
+      margin-bottom: 19px;
+      padding-bottom: 20px;
+      font-weight: 500;
+      font-size: 20px;
+      transition: color 0.1s;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          181.3deg,
+          rgba(64, 211, 129, 0.15) -1.32%,
+          rgba(67, 163, 183, 0.15) 10.38%,
+          rgba(41, 44, 200, 0.15) 97.79%
+        );
+      }
+    }
+    &__text {
+      margin-bottom: 10px;
+      span {
+        font-weight: 500;
+      }
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      margin-top: 27px;
+      color: $primary-color;
+      font-weight: normal;
+      &:after {
+        content: '';
+        width: 14px;
+        height: 10px;
+        margin-left: 10px;
+        background: url('../images/icon-portfolio-arr.svg') center/contain no-repeat;
+        transition: transform 0.2s;
+      }
+    }
+  }
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-pagination {
+    &__item {
+      width: 25px;
+      height: 24px;
+      margin-left: 12px;
+      font-weight: normal;
+      font-size: 14px;
+    }
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      transition: background-color 0.1s;
+      &:not(:not(a)) {
+        &:hover,
+        &:focus {
+          background-color: $neutral-color-8;
+        }
+      }
+      &--active {
+        background: linear-gradient(
+          58.11deg,
+          rgba(64, 211, 129, 0.15) 2.1%,
+          rgba(67, 163, 183, 0.15) 15.29%,
+          rgba(41, 44, 200, 0.15) 88.23%
+        );
+      }
+    }
+  }
+}
