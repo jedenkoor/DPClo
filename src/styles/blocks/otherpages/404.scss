@@ -1,5 +1,6 @@
 .notfound {
   height: calc(100vh - 182px);
+  min-height: 550px;
   background: url('../images/404.svg') center top repeat;
   @media screen and (max-height: 800px) {
     background: url('../images/404-laptop.svg') center top repeat;
