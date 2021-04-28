@@ -1,6 +1,6 @@
 .notfound {
   height: calc(100vh - 182px);
-  background: url('../images/404.svg') center repeat-x;
+  background: url('../images/404.svg') center top repeat;
   &__container {
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
     height: 100%;
   }
   &__title {
-    margin-top: 57px;
+    margin-top: 89px;
     margin-bottom: 0;
     font-weight: 600;
     font-size: 230px;
