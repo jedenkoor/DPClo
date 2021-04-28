@@ -1,6 +1,9 @@
 .notfound {
   height: calc(100vh - 182px);
   background: url('../images/404.svg') center top repeat;
+  @media screen and (max-height: 800px) {
+    background: url('../images/404-laptop.svg') center top repeat;
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -13,6 +16,9 @@
     font-weight: 600;
     font-size: 230px;
     line-height: 332px;
+    @media screen and (max-height: 800px) {
+      margin-top: 2px;
+    }
   }
   &__text {
     margin-top: -22px;
