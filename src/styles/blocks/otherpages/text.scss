@@ -1,0 +1,15 @@
+.text {
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+  }
+  p {
+    max-width: 758px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

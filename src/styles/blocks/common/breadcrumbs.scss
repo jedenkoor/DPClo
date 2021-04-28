@@ -24,7 +24,7 @@
     &:not(a) {
       color: $neutral-color-5;
     }
-    &:not(:not(a)) {
+    &:any-link {
       &:hover,
       &:focus {
         color: $primary-color;

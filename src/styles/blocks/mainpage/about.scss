@@ -38,16 +38,19 @@
     &__item {
       margin-right: 41px;
       &:first-child:last-child .about-navigation__btn {
-        border-bottom: 1px solid transparent !important;
+        pointer-events: none;
         color: $neutral-color-1 !important;
         cursor: auto;
+        &:before{
+          width: 0;
+        }
       }
     }
     &__btn {
+      position: relative;
       padding: 0;
       padding-bottom: 6px;
       border: none;
-      border-bottom: 1px solid transparent;
       background: none;
       font-weight: 500;
       font-size: 20px;
@@ -57,9 +60,21 @@
       &:focus {
         color: $primary-color;
       }
+      &:before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: $primary-color;
+        transition: width ease .2s;
+      }
       &.tabs__btn--active {
         color: $primary-color;
-        border-bottom: 1px solid $primary-color;
+        &:before{
+          width: 100%;
+        }
       }
     }
   }

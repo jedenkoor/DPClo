@@ -71,11 +71,13 @@
           rgba(67, 163, 183, 0.15) 10.38%,
           rgba(41, 44, 200, 0.15) 97.79%
         );
+
         &:hover,
         &:focus {
           background: $neutral-color-1;
         }
         &.swiper-pagination-bullet-active {
+          transition: 0.3s;
           width: 18px;
           background: linear-gradient(90deg, #40d381 -54.63%, #43a3b7 4.38%, #292cc8 110.02%);
           opacity: 0.7;
