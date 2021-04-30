@@ -79,6 +79,7 @@
     }
     &__link {
       font-weight: normal;
+      font-size: 18px;
       @include w1023 {
         font-weight: 300;
         font-size: 13px;
