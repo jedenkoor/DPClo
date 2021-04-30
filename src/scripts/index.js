@@ -52,7 +52,7 @@ class Init {
     window.ap(document).on('click', '.header-list__link', function (e) {
       e.preventDefault()
       _this.actions().scrollToBlock(this)
-      if (document.documentElement.clientWidth < 1200) {
+      if (document.documentElement.clientWidth < 1024) {
         _this.actions().toggleMenu(this)
       }
     })
