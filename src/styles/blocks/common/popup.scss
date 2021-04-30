@@ -24,11 +24,9 @@
     background: none;
     border: none;
     cursor: pointer;
-    &:hover {
-      background: rgba(61, 61, 59, 0.07);
-    }
-    &:focus {
-      background: rgba(61, 61, 59, 0.12);
+    &:hover path,
+    &:focus path {
+      stroke: $primary-color;
     }
   }
   &__content {
