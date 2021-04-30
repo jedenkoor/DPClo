@@ -144,7 +144,12 @@
       &:focus {
         .projects-item__btn {
           background-color: $primary-color;
-          background-image: url('../images/icon-arr-focus.svg');
+          g {
+            opacity: 1;
+          }
+          path {
+            stroke: $neutral-color-10;
+          }
         }
       }
     }
@@ -197,15 +202,17 @@
       width: 50px;
       height: 50px;
       transition: 0.1s;
-      background-color: $neutral-color-10;
-      background-image: url('../images/icon-arr.svg');
-      background-position: center;
-      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-top: 1px solid $blue-border-color;
       border-left: 1px solid $blue-border-color;
       @include w1023 {
         width: 45px;
         height: 45px;
+      }
+      path {
+        stroke: url(#paint0_linear);
       }
     }
   }

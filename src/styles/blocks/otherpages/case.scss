@@ -56,6 +56,15 @@
       height: 20px;
       margin-top: 0;
       transition: 0.1s;
+      &:hover,
+      &:focus {
+        g {
+          opacity: 1;
+        }
+        path {
+          stroke: $primary-dark-color;
+        }
+      }
       &:after {
         display: none;
       }
@@ -66,24 +75,14 @@
     .swiper-button-prev {
       right: 48px;
       left: auto;
-      background: url('../images/icon-arr-prev.svg') center/contain no-repeat;
       @include w767 {
         right: 63px;
-      }
-      &:hover,
-      &:focus {
-        background: url('../images/icon-arr-prev-focus.svg') center/contain no-repeat;
       }
     }
     .swiper-button-next {
       right: 0;
-      background: url('../images/icon-arr-next.svg') center/contain no-repeat;
       @include w767 {
         right: 15px;
-      }
-      &:hover,
-      &:focus {
-        background: url('../images/icon-arr-next-focus.svg') center/contain no-repeat;
       }
     }
     .swiper-pagination {
