@@ -2,24 +2,93 @@
   &__text {
     max-width: 900px;
     margin-bottom: 40px;
+    @include w767 {
+      margin-bottom: 57px;
+    }
   }
   &__content {
     display: grid;
     grid-template-columns: 253px calc(100% - 294px);
     grid-gap: 41px;
+    @include w1023 {
+      grid-template-columns: 100%;
+      grid-gap: 15px;
+    }
   }
   &-filter {
+    &__show {
+      display: none;
+      @include w1023 {
+        display: flex;
+        padding: 10px;
+        background: none;
+        border: none;
+        margin-left: auto;
+        margin-right: -10px;
+        margin-top: -10px;
+      }
+      path {
+        transition: stroke 0.1s;
+      }
+      &:hover path,
+      &:focus path {
+        stroke: $primary-color;
+      }
+    }
+    &__wrapper {
+      position: static;
+      transform: none;
+      max-width: none;
+      opacity: 1;
+      visibility: visible;
+      @include w1023 {
+        position: fixed;
+        transform: translate(-50%, -50%);
+        max-width: 450px;
+        opacity: 0;
+        visibility: hidden;
+      }
+      &.popup--active {
+        opacity: 1;
+        visibility: visible;
+        transition: visibility 0s linear, opacity 0.2s linear;
+      }
+      .popup__close {
+        display: none;
+
+        @include w1023 {
+          display: flex;
+          top: 24px;
+          right: 10px;
+        }
+      }
+    }
+    &__content {
+      @include w1023 {
+        max-height: 80vh;
+        padding: 23px 15px 44px;
+        overflow-y: auto;
+      }
+    }
     &__top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 41px;
+      @include w1023 {
+        justify-content: flex-start;
+        margin-bottom: 30px;
+      }
     }
     &__title {
       margin: 0;
       font-weight: 500;
       font-size: 20px;
       line-height: 130%;
+      @include w1023 {
+        font-weight: 600;
+        font-size: 20px;
+      }
     }
     &__reset {
       padding: 0;
@@ -30,6 +99,10 @@
       line-height: 130%;
       color: $neutral-color-5;
       cursor: pointer;
+      @include w1023 {
+        margin-left: 20px;
+        font-size: 13px;
+      }
       &:hover,
       &:focus {
         color: $primary-color;
@@ -46,6 +119,9 @@
       font-weight: 500;
       font-size: 18px;
       line-height: 130%;
+      @include w1023 {
+        font-size: 15px;
+      }
     }
     &__items {
       padding-left: 0;
@@ -79,6 +155,9 @@
       span {
         display: flex;
         align-items: center;
+        @include w1023 {
+          font-size: 14px;
+        }
       }
     }
     &-range {
@@ -140,11 +219,24 @@
           font-size: 16px;
           line-height: 130%;
           text-align: center;
+          @include w1023 {
+            font-size: 13px;
+            width: 32px;
+            margin: 0 1px;
+          }
         }
       }
     }
+    &__btn {
+      display: none;
+      @include w1023 {
+        display: block;
+        width: 100%;
+        margin-top: 60px;
+        padding: 10px 0;
+      }
+    }
   }
-
   &__items {
     display: grid;
     grid-template-columns: repeat(2, calc(50% - 7.5px));
@@ -152,6 +244,13 @@
     padding-top: 10px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      padding-top: 0;
+    }
+    @include w767 {
+      grid-template-columns: 100%;
+      grid-gap: 15px;
+    }
   }
   &-item {
     &__link {
@@ -185,6 +284,13 @@
       flex-wrap: wrap;
       padding-left: 0;
       list-style: none;
+      @include w1023 {
+        bottom: 30px;
+        left: 15px;
+      }
+      @include w767 {
+        bottom: 15px;
+      }
     }
     &__tag {
       margin-top: 10px;
@@ -194,6 +300,9 @@
     }
     &__info {
       padding: 26px 31px 28px 29px;
+      @include w1023 {
+        padding: 24px 15px 21px;
+      }
     }
     &__title {
       position: relative;
@@ -203,6 +312,11 @@
       font-weight: 500;
       font-size: 20px;
       transition: color 0.1s;
+      @include w1023 {
+        margin-bottom: 12px;
+        padding-bottom: 17px;
+        font-size: 15px;
+      }
       &:after {
         content: '';
         position: absolute;
@@ -230,6 +344,13 @@
       margin-top: 27px;
       color: $primary-color;
       font-weight: normal;
+      @include w1023 {
+        margin-top: 32px;
+        font-size: 14px;
+      }
+      @include w767 {
+        margin-top: 34px;
+      }
       &:after {
         content: '';
         width: 14px;
@@ -247,6 +368,9 @@
     margin-top: 30px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      margin-top: 32px;
+    }
   }
   &-pagination {
     &__item {

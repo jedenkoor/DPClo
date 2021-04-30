@@ -36,6 +36,12 @@ html.compensate-for-scrollbar {
   @-moz-document url-prefix() {
     margin-right: 17px;
   }
+  .header {
+    padding-right: 4px;
+    @-moz-document url-prefix() {
+      padding-right: 17px;
+    }
+  }
 }
 
 body {
@@ -48,6 +54,10 @@ body {
   transition: opacity 0.2s;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
+  @include w1023 {
+    font-size: 13px;
+    line-height: 17px;
+  }
 }
 
 .wrapper {
@@ -59,6 +69,13 @@ body {
 
 .content {
   flex: 1;
+  padding-top: 91px;
+  @include w1023 {
+    padding-top: 81px;
+  }
+  @include w767 {
+    padding-top: 61px;
+  }
 }
 
 .container {
@@ -66,6 +83,9 @@ body {
   max-width: 1142px;
   margin: 0 auto;
   padding: $padding-container;
+  @include w767 {
+    padding: $mobile-padding-container;
+  }
 }
 
 .margin-section {
@@ -93,6 +113,9 @@ ol {
 p {
   margin-top: 0;
   margin-bottom: 23px;
+  @include w1023 {
+    margin-bottom: 15px;
+  }
   &:last-child {
     margin-bottom: 0;
   }
@@ -132,6 +155,11 @@ input[type='number'] {
   font-size: 16px;
   line-height: 130%;
   transition: border-color 0.1s;
+  background: transparent;
+  @include w1023 {
+    padding: 0px 14px 1px;
+    font-size: 13px;
+  }
   &::placeholder {
     color: $neutral-color-4;
   }
@@ -166,6 +194,11 @@ input[type='number'] {
   resize: none;
   overflow: hidden;
   transition: border-color 0.1s;
+  background: transparent;
+  @include w1023 {
+    padding: 13px 14px;
+    font-size: 13px;
+  }
   &::placeholder {
     color: $neutral-color-4;
   }
@@ -197,6 +230,9 @@ input[type='number'] {
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
+  @include w1023 {
+    font-size: 13px;
+  }
   &:hover,
   &:focus {
     border-color: $primary-dark-color;
@@ -218,6 +254,9 @@ input[type='number'] {
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
+  @include w1023 {
+    font-size: 13px;
+  }
   &:hover,
   &:focus {
     background: $blue-light-color;
@@ -238,6 +277,9 @@ input[type='number'] {
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
+  @include w1023 {
+    font-size: 13px;
+  }
   &:hover,
   &:focus {
     border-color: $primary-color;
@@ -253,6 +295,11 @@ input[type='number'] {
   font-weight: 600;
   font-size: 36px;
   line-height: 52px;
+  @include w1023 {
+    margin-bottom: 39px;
+    font-size: 20px;
+    line-height: 110%;
+  }
 }
 
 .hint {

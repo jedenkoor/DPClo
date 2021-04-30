@@ -1,6 +1,10 @@
 .breadcrumbs {
   margin-top: 25px;
-  margin-bottom: 55px;
+  margin-bottom: 48px;
+  @include w1023 {
+    margin-top: 26px;
+    margin-bottom: 18px;
+  }
   &__container {
     display: flex;
     align-items: center;
@@ -8,6 +12,7 @@
     list-style: none;
   }
   &__item {
+    margin-bottom: 7px;
     &:not(:last-child) {
       display: flex;
       align-items: center;
@@ -21,6 +26,10 @@
     }
   }
   &__link {
+    @include w1023 {
+      font-size: 13px;
+      line-height: 130%;
+    }
     &:not(a) {
       color: $neutral-color-5;
     }

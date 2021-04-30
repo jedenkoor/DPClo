@@ -2,6 +2,14 @@
   position: relative;
   height: 561px;
   background: url('../images/banner.svg') center repeat-x;
+  @include w1023 {
+    height: 357px;
+    background: url('../images/banner-tablet.svg') left top repeat;
+  }
+  @include w767 {
+    height: 584px;
+    background: url('../images/banner-mobile.svg') left top repeat;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -22,36 +30,91 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    @include w1023 {
+      align-items: flex-start;
+    }
   }
   &__col {
     &:last-child {
       align-self: stretch;
+      width: 343px;
+      @include w767 {
+        position: absolute;
+        right: 11px;
+        bottom: 0;
+        width: auto;
+      }
     }
   }
   &__img {
     height: 100%;
+    margin-left: auto;
+    @include w1023 {
+      margin-right: 45px;
+    }
+    @include w767 {
+      width: 218px;
+      height: auto;
+      margin-right: 0;
+    }
   }
   &__title {
     max-width: 540px;
-    margin-top: -31px;
-    margin-bottom: 27px;
+    margin-top: -30px;
+    margin-bottom: 26px;
     font-weight: 600;
     font-size: 56px;
     line-height: 110%;
+    @include w1023 {
+      margin-top: 79px;
+      margin-bottom: 15px;
+      max-width: 250px;
+      font-size: 26px;
+    }
+    @include w767 {
+      margin-top: 35px;
+    }
   }
   &__text {
     max-width: 365px;
     margin-bottom: 48px;
     font-size: 18px;
     line-height: 130%;
+    @include w1023 {
+      max-width: 263px;
+      margin-bottom: 37px;
+      font-size: 13px;
+      line-height: 17px;
+    }
+    @include w767 {
+      margin-bottom: 25px;
+    }
   }
   &__row {
     display: flex;
+    @include w767 {
+      display: block;
+    }
   }
   &__btn {
     padding: 13px 25px;
+    @include w1023 {
+      padding: 10px 37px;
+    }
+    @include w767 {
+      display: block;
+      width: 193px;
+      padding: 10px 0;
+    }
     &:not(:last-child) {
       margin-right: 15px;
+      @include w1023 {
+        margin-right: 8px;
+      }
+      @include w767 {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
     }
   }
 }

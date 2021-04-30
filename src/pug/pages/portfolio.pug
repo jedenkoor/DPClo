@@ -11,67 +11,78 @@ block content
       p.portfolio__text У всех нас свои предпочтения, вкусы и привычки, но каждому хочется быть стильным и ярким. Изделия созданные нами с нуля достаточно износостойкие и становятся эталоном качества для других.
       .portfolio__content 
         aside.portfolio__filter.portfolio-filter
-          .portfolio-filter__top
-            h3.portfolio-filter__title Фильтры поиска
-            button.portfolio-filter__reset(type="reset") Сбросить
-          .portfolio-filter__category 
-            h4.portfolio-filter__subtitle Сортировать
-            ul.portfolio-filter__items 
-              li.portfolio-filter__item
-                label.portfolio-filter__label 
-                  input.visually-hidden(type="radio" name="sort" value="Сначала новые")
-                  span Сначала новые
-              li.portfolio-filter__item
-                label.portfolio-filter__label 
-                  input.visually-hidden(type="radio" name="sort" value="Сначала старые" checked)
-                  span Сначала старые
-          .portfolio-filter__category 
-            h4.portfolio-filter__subtitle Категории
-            ul.portfolio-filter__items 
-              li.portfolio-filter__item
-                label.portfolio-filter__label 
-                  input.visually-hidden(type="checkbox" name="category")
-                  span Базовая
-              li.portfolio-filter__item
-                label.portfolio-filter__label 
-                  input.visually-hidden(type="checkbox" name="category")
-                  span Концептуальная
-              li.portfolio-filter__item
-                label.portfolio-filter__label 
-                  input.visually-hidden(type="checkbox" name="category" checked)
-                  span Парадно-спортивные костюмы
-          .portfolio-filter__category 
-            h4.portfolio-filter__subtitle Компании
-            ul.portfolio-filter__items 
-              li.portfolio-filter__item
-                label.portfolio-filter__label 
-                  input.visually-hidden(type="checkbox" name="company")
-                  span ХК "Красная звезда"
-              li.portfolio-filter__item
-                label.portfolio-filter__label 
-                  input.visually-hidden(type="checkbox" name="company")
-                  span ХК "Невские барсы"
-              li.portfolio-filter__item
-                label.portfolio-filter__label 
-                  input.visually-hidden(type="checkbox" name="company" checked)
-                  span Internation
-              li.portfolio-filter__item
-                label.portfolio-filter__label 
-                  input.visually-hidden(type="checkbox" name="company")
-                  span Levitacia
-          .portfolio-filter__category 
-            h4.portfolio-filter__subtitle Временной промежуток
-            .portfolio-filter__range.portfolio-filter-range
-              .portfolio-filter-range__row 
-                .portfolio-filter-range__col
-                  span от
-                  input.portfolio-slider-from(type="text" placeholder="2017")
-                  span г
-                .portfolio-filter-range__col
-                  span до
-                  input.portfolio-slider-to(type="text" placeholder="2021")
-                  span г
-              .portfolio-filter-range__slider.portfolio-slider(data-min="2017" data-max="2021" data-step="1")
+          button.portfolio-filter__show.popup-btn(data-popup="filter")
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 4.66667L8.66667 4.66667M8.66667 4.66667C8.66667 3.19391 7.47276 2 6 2C4.52724 2 3.33333 3.19391 3.33333 4.66667M8.66667 4.66667C8.66667 6.13943 7.47276 7.33333 6 7.33333C4.52724 7.33333 3.33333 6.13943 3.33333 4.66667M3.33333 4.66667L0 4.66667M20 15.3333L16.6667 15.3333M16.6667 15.3333C16.6667 13.8606 15.4728 12.6667 14 12.6667C12.5272 12.6667 11.3333 13.8606 11.3333 15.3333M16.6667 15.3333C16.6667 16.8061 15.4728 18 14 18C12.5272 18 11.3333 16.8061 11.3333 15.3333M11.3333 15.3333H1.69528e-07" stroke="#1A1A1A"/>
+            </svg>
+          form.portfolio-filter__wrapper.popup(action="#" data-popup="filter") 
+            button.popup__close 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.3637 5.63623L11.9997 12.0002M11.9997 12.0002L5.63574 18.3642M11.9997 12.0002L18.3637 18.3642M11.9997 12.0002L5.63574 5.63623" stroke="black"/>
+              </svg>
+            .portfolio-filter__content
+              .portfolio-filter__top
+                h3.portfolio-filter__title Фильтры поиска
+                button.portfolio-filter__reset(type="reset") Сбросить
+              .portfolio-filter__category 
+                h4.portfolio-filter__subtitle Сортировать
+                ul.portfolio-filter__items 
+                  li.portfolio-filter__item
+                    label.portfolio-filter__label 
+                      input.visually-hidden(type="radio" name="sort" value="Сначала новые")
+                      span Сначала новые
+                  li.portfolio-filter__item
+                    label.portfolio-filter__label 
+                      input.visually-hidden(type="radio" name="sort" value="Сначала старые" checked)
+                      span Сначала старые
+              .portfolio-filter__category 
+                h4.portfolio-filter__subtitle Категории
+                ul.portfolio-filter__items 
+                  li.portfolio-filter__item
+                    label.portfolio-filter__label 
+                      input.visually-hidden(type="checkbox" name="category")
+                      span Базовая
+                  li.portfolio-filter__item
+                    label.portfolio-filter__label 
+                      input.visually-hidden(type="checkbox" name="category")
+                      span Концептуальная
+                  li.portfolio-filter__item
+                    label.portfolio-filter__label 
+                      input.visually-hidden(type="checkbox" name="category" checked)
+                      span Парадно-спортивные костюмы
+              .portfolio-filter__category 
+                h4.portfolio-filter__subtitle Компании
+                ul.portfolio-filter__items 
+                  li.portfolio-filter__item
+                    label.portfolio-filter__label 
+                      input.visually-hidden(type="checkbox" name="company")
+                      span ХК "Красная звезда"
+                  li.portfolio-filter__item
+                    label.portfolio-filter__label 
+                      input.visually-hidden(type="checkbox" name="company")
+                      span ХК "Невские барсы"
+                  li.portfolio-filter__item
+                    label.portfolio-filter__label 
+                      input.visually-hidden(type="checkbox" name="company" checked)
+                      span Internation
+                  li.portfolio-filter__item
+                    label.portfolio-filter__label 
+                      input.visually-hidden(type="checkbox" name="company")
+                      span Levitacia
+              .portfolio-filter__category 
+                h4.portfolio-filter__subtitle Временной промежуток
+                .portfolio-filter__range.portfolio-filter-range
+                  .portfolio-filter-range__row 
+                    .portfolio-filter-range__col
+                      span от
+                      input.portfolio-slider-from(type="text" placeholder="2017")
+                      span г
+                    .portfolio-filter-range__col
+                      span до
+                      input.portfolio-slider-to(type="text" placeholder="2021")
+                      span г
+                  .portfolio-filter-range__slider.portfolio-slider(data-min="2017" data-max="2021" data-step="1")
+              button.portfolio-filter__btn.btn-primary(type="submit") Применить
         .portfolio__wrapper 
           ul.portfolio__items
             li.portfolio__item.portfolio-item
@@ -83,7 +94,7 @@ block content
                   ul.portfolio-item__tags
                     li.portfolio-item__tag Разработка дизайна
                 .portfolio-item__info 
-                  h3.portfolio-item__title Коллекция “Classic” 
+                  h3.portfolio-item__title Коллекция “Classic”
                   p.portfolio-item__text Срок разработки: 15 дней
                   p.portfolio-item__text Заказчик: INTERNATION
                   p.portfolio-item__btn Подробнее
@@ -97,7 +108,7 @@ block content
                     ul.portfolio-item__tags
                       li.portfolio-item__tag Разработка дизайна + производство
                   .portfolio-item__info 
-                    h3.portfolio-item__title Школьная форма
+                    h3.portfolio-item__title Парадно-спортивные костюмы
                     p.portfolio-item__text Срок разработки и производства: 40 дней
                     p.portfolio-item__text Заказчик: <span>образование.ru </span>
                     p.portfolio-item__btn Подробнее

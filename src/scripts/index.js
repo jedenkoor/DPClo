@@ -18,6 +18,8 @@ class Init {
     this.controller.scrollTo(function (newpos) {
       TweenMax.to(window, 0.6, { scrollTo: { y: newpos } })
     })
+
+    this.directionScroll = []
   }
 
   init() {
@@ -43,7 +45,19 @@ class Init {
   events() {
     const _this = this
 
-    window.ap(document).on('click', '.header-list__link, .footer-list__link', function (e) {
+    document.addEventListener('scroll', (e) => {
+      _this.actions().toggleHeaderOnScroll()
+    })
+
+    window.ap(document).on('click', '.header-list__link', function (e) {
+      e.preventDefault()
+      _this.actions().scrollToBlock(this)
+      if (document.documentElement.clientWidth < 1200) {
+        _this.actions().toggleMenu(this)
+      }
+    })
+
+    window.ap(document).on('click', '.footer-list__link', function (e) {
       e.preventDefault()
       _this.actions().scrollToBlock(this)
     })
@@ -123,6 +137,18 @@ class Init {
         })
       })
     }
+
+    window.ap(document).on('click', '.header__burger', function (e) {
+      e.preventDefault()
+      _this.actions().toggleMenu(this)
+    })
+
+    if (document.documentElement.clientWidth < 1024) {
+      window.ap(document).on('click', '.header__btn', function (e) {
+        e.preventDefault()
+        _this.actions().toggleMenu(this)
+      })
+    }
   }
 
   actions() {
@@ -149,6 +175,17 @@ class Init {
         if (currentPathname !== linkPathname) {
           localStorage.setItem('idBLock', id)
           location.href = linkPathname
+        }
+      },
+      toggleHeaderOnScroll() {
+        _this.directionScroll.push(window.pageYOffset)
+        if (_this.directionScroll[0] < _this.directionScroll[1] && window.pageYOffset > 200) {
+          _this.directionScroll = _this.directionScroll.slice(0, 0)
+          document.querySelector('.header').classList.add('header--hidden')
+        }
+        if (_this.directionScroll[0] > _this.directionScroll[1]) {
+          _this.directionScroll = _this.directionScroll.slice(0, 0)
+          document.querySelector('.header').classList.remove('header--hidden')
         }
       },
       initPhoneMask() {
@@ -216,9 +253,6 @@ class Init {
           item.classList.remove('tabs__container--active')
           if (item.getAttribute('data-tab') === tabDataAttr) {
             item.classList.add('tabs__container--active')
-            if (document.documentElement.clientWidth < 768) {
-              window.scrollTo(0, item.offsetTop - 170)
-            }
           }
         })
 
@@ -256,11 +290,9 @@ class Init {
       hidePopup(el) {
         if (el.classList.contains('overlay--menu')) {
           el.classList.remove('overlay--menu')
-          document.querySelector('.header__nav').classList.remove('header__nav--active')
+          document.querySelector('.header__wrap').classList.remove('header__wrap--active')
           document.querySelector('.header__burger').classList.remove('header__burger--active')
         } else {
-          document.querySelector('html').classList.remove('compensate-for-scrollbar')
-          document.querySelector('html').classList.remove('fixed')
           const overlay = document.querySelector('.overlay')
           const popup = document.querySelector('.popup--active')
           const popupTrigger = document.querySelector('.popup-trigger')
@@ -269,6 +301,8 @@ class Init {
           popupTrigger.focus()
           popupTrigger.classList.remove('popup-trigger')
         }
+        document.querySelector('html').classList.remove('compensate-for-scrollbar')
+        document.querySelector('html').classList.remove('fixed')
       },
       toggleSelect(el) {
         el.classList.toggle('active')
@@ -328,7 +362,7 @@ class Init {
           new Swiper(el, {
             loop: true,
             spaceBetween: 15,
-            slidesPerView: 2,
+            slidesPerView: 'auto',
             navigation: {
               prevEl: prevArr,
               nextEl: nextArr
@@ -336,8 +370,25 @@ class Init {
             pagination: {
               el: pagination,
               clickable: true
+            },
+            breakpoints: {
+              768: {
+                slidesPerView: 2
+              }
             }
           }))()
+      },
+      toggleMenu(el) {
+        const burger = document.querySelector('.header__burger')
+        const menu = document.querySelector('.header__wrap')
+        const overlay = document.querySelector('.overlay')
+
+        burger.classList.toggle('header__burger--active')
+        overlay.classList.toggle('overlay--menu')
+        menu.classList.toggle('header__wrap--active')
+        if (!el.classList.contains('header__btn')) {
+          document.querySelector('html').classList.toggle('fixed')
+        }
       }
     }
   }

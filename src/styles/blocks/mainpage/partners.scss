@@ -1,6 +1,10 @@
 .partners {
   &__content {
     position: relative;
+    @include w767 {
+      border-top: 1px solid $blue-border-color;
+      border-bottom: 1px solid $blue-border-color;
+    }
     &:before,
     &:after {
       content: '';
@@ -14,6 +18,9 @@
         rgba(67, 163, 183, 0.15) 15.29%,
         rgba(41, 44, 200, 0.15) 88.23%
       );
+      @include w767 {
+        display: none;
+      }
     }
     &:before {
       top: 0;
@@ -26,9 +33,16 @@
     display: grid;
     grid-template-columns: repeat(4, 25%);
     list-style: none;
+    @include w767 {
+      grid-template-columns: repeat(2, 50%);
+    }
   }
   &__item {
     position: relative;
+    @include w767 {
+      border-right: 1px solid $blue-border-color;
+      border-bottom: 1px solid $blue-border-color;
+    }
     &:after {
       content: '';
       position: absolute;
@@ -42,8 +56,14 @@
         rgba(67, 163, 183, 0.15) 10.38%,
         rgba(41, 44, 200, 0.15) 97.79%
       );
+      @include w767 {
+        display: none;
+      }
     }
     &:first-child {
+      @include w767 {
+        border-left: 1px solid $blue-border-color;
+      }
       &:before {
         content: '';
         position: absolute;
@@ -57,6 +77,9 @@
           rgba(67, 163, 183, 0.15) 10.38%,
           rgba(41, 44, 200, 0.15) 97.79%
         );
+        @include w767 {
+          display: none;
+        }
       }
     }
     &:nth-child(2n + 1) {
@@ -66,6 +89,25 @@
         rgba(67, 163, 183, 0.02) 4.28%,
         rgba(41, 44, 200, 0.02) 96.78%
       );
+      @include w767 {
+        background: none;
+        border-left: 1px solid $blue-border-color;
+      }
+    }
+    &:nth-child(4n + 1),
+    &:nth-child(4n) {
+      @include w767 {
+        background: linear-gradient(
+          68.3deg,
+          rgba(64, 211, 129, 0.02) -9.65%,
+          rgba(67, 163, 183, 0.02) 4.28%,
+          rgba(41, 44, 200, 0.02) 96.78%
+        );
+      }
+    }
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      border-bottom: none;
     }
   }
   &__link {
@@ -74,6 +116,9 @@
     align-items: center;
     justify-content: center;
     height: 163px;
+    @include w1023 {
+      height: 105px;
+    }
     &:hover,
     &:focus {
       &:before {
@@ -87,5 +132,10 @@
         background: linear-gradient(272.56deg, #40d381 -48.53%, #43a3b7 18.26%, #292cc8 120.29%);
       }
     }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }

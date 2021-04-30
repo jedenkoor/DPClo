@@ -1,9 +1,19 @@
 .notfound {
   height: calc(100vh - 182px);
-  min-height: 550px;
+  min-height: 591px;
   background: url('../images/404.svg') center top repeat;
   @media screen and (max-height: 800px) {
     background: url('../images/404-laptop.svg') center top repeat;
+  }
+  @include w1023 {
+    height: calc(100vh - 165px);
+    min-height: 421px;
+    background: url('../images/404-tablet.svg') center top repeat;
+  }
+  @include w767 {
+    height: auto;
+    min-height: 578px;
+    background: url('../images/404-mobile.svg') center top repeat;
   }
   &__container {
     display: flex;
@@ -20,21 +30,57 @@
     @media screen and (max-height: 800px) {
       margin-top: 2px;
     }
+    @include w1023 {
+      margin-top: 27px;
+      font-size: 110px;
+      line-height: 159px;
+    }
+    @include w767 {
+      margin-top: 66px;
+    }
   }
   &__text {
     margin-top: -22px;
-    margin-bottom: 50px;
+    margin-bottom: 56px;
     text-align: center;
     font-size: 18px;
-    line-height: 130%;
+    @include w1023 {
+      margin-top: 11px;
+      margin-bottom: 41px;
+      font-size: 13px;
+    }
+    @include w767 {
+      margin-bottom: 50px;
+    }
+    p {
+      &:not(:last-child) {
+        @include w1023 {
+          margin-bottom: 17px;
+        }
+      }
+    }
   }
   &__btns {
     display: flex;
+    @include w767 {
+      flex-direction: column;
+    }
   }
   &__btn {
     padding: 13px 25px;
+    @include w1023 {
+      padding: 10px 37px;
+    }
+    @include w767 {
+      width: 192px;
+      padding: 10px 0;
+    }
     &:not(:last-child) {
-      margin-right: 15px;
+      margin-right: 16px;
+      @include w767 {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
   }
 }

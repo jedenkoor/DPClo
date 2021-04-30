@@ -1,18 +1,50 @@
 .projects {
+  @include w767 {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 62px;
+  }
   &__top {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
+    @include w1023 {
+      margin-bottom: 19px;
+    }
+    @include w767 {
+      display: block;
+    }
   }
   &__navigation {
     display: flex;
     align-items: center;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      transform: translateX(-15px);
+      width: 100vw;
+      padding-left: 15px;
+      overflow-x: auto;
+    }
+    &:after {
+      @include w767 {
+        content: '';
+        flex: 0 0 15px;
+        height: 1px;
+      }
+    }
   }
   &-navigation {
     &__item {
       margin-right: 30px;
+      @include w767 {
+        margin-right: 0;
+      }
+      &:not(:last-child) {
+        @include w767 {
+          margin-right: 29px;
+        }
+      }
       label {
         display: flex;
         cursor: pointer;
@@ -22,20 +54,46 @@
       }
       input {
         &:checked + span {
-          border-bottom: 1px solid $neutral-color-1;
+          &:before {
+            width: 100%;
+          }
         }
         &:focus + span {
           color: $primary-color;
         }
       }
       span {
+        position: relative;
         font-weight: 500;
         line-height: 20px;
+        border-bottom: 1px solid transparent;
+        @include w1023 {
+          font-size: 14px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background-color: $neutral-color-1;
+          transition: width ease 0.1s;
+        }
       }
     }
   }
   &__btn {
     padding: 8px 18px;
+    @include w1023 {
+      margin-left: auto;
+      padding: 10px 38px;
+    }
+    @include w767 {
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+    }
   }
   &__list {
     display: grid;
@@ -43,11 +101,37 @@
     grid-gap: 15px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      display: flex;
+      grid-gap: 0;
+      transform: translateX(-16px);
+      width: 100vw;
+      padding-left: 16px;
+      overflow-x: auto;
+    }
+    @include w767 {
+      transform: translateX(-15px);
+      padding-left: 15px;
+    }
+    &:after {
+      @include w1023 {
+        content: '';
+        flex: 0 0 16px;
+      }
+    }
   }
   &__item {
     position: relative;
     display: flex;
     border: 1px solid $blue-border-color;
+    @include w1023 {
+      min-width: 300px;
+    }
+    &:not(:last-child) {
+      @include w1023 {
+        margin-right: 15px;
+      }
+    }
   }
   &-item {
     &__link {
@@ -69,6 +153,9 @@
       display: block;
       margin-bottom: 24px;
       padding-bottom: 100%;
+      @include w1023 {
+        margin-bottom: 25px;
+      }
     }
     &__img {
       position: absolute;
@@ -81,6 +168,9 @@
     &__brand {
       display: block;
       margin-bottom: 9px;
+      @include w1023 {
+        margin-bottom: 11px;
+      }
     }
     &__title {
       height: 78px;
@@ -93,6 +183,12 @@
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      @include w1023 {
+        height: 34px;
+        margin-bottom: 62px;
+        font-size: 15px;
+        line-height: 17px;
+      }
     }
     &__btn {
       position: absolute;
@@ -101,12 +197,16 @@
       width: 50px;
       height: 50px;
       transition: 0.1s;
-      background-color: #fff;
+      background-color: $neutral-color-10;
       background-image: url('../images/icon-arr.svg');
       background-position: center;
       background-repeat: no-repeat;
       border-top: 1px solid $blue-border-color;
       border-left: 1px solid $blue-border-color;
+      @include w1023 {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
 }

@@ -5,18 +5,59 @@
     grid-gap: 15px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      display: flex;
+      grid-gap: 0;
+      transform: translateX(-16px);
+      width: 100vw;
+      padding-left: 16px;
+      overflow-x: auto;
+    }
+    @include w767 {
+      display: block;
+      transform: none;
+      width: 100%;
+      padding-left: 0;
+    }
+    &:after {
+      @include w1023 {
+        content: '';
+        flex: 0 0 16px;
+      }
+      @include w767 {
+        display: none;
+      }
+    }
   }
   &__item {
     display: flex;
     flex-direction: column;
     padding: 15px;
     border: 1px solid $blue-border-color;
+    @include w1023 {
+      min-width: 315px;
+    }
+    @include w767 {
+      min-width: auto;
+    }
+    &:not(:last-child) {
+      @include w1023 {
+        margin-right: 15px;
+      }
+      @include w767 {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+    }
   }
   &-item {
     &__img {
       width: 100%;
       height: 178px;
       object-fit: cover;
+      @include w1023 {
+        height: 186px;
+      }
     }
     &__title {
       height: 62px;
@@ -29,15 +70,35 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      @include w1023 {
+        height: 36px;
+        margin-top: 38px;
+        margin-bottom: 18px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 18px;
+      }
+      @include w767 {
+        height: auto;
+      }
     }
     &__text {
       margin-bottom: 35px;
+      @include w1023 {
+        margin-bottom: 25px;
+      }
       ul {
         list-style: disc;
         padding-left: 18px;
+        @include w1023 {
+          padding-left: 14px;
+        }
         li {
           &:not(:last-child) {
             margin-bottom: 10px;
+            @include w1023 {
+              margin-bottom: 8px;
+            }
           }
         }
       }
@@ -45,6 +106,9 @@
     &__btn {
       margin-top: auto;
       padding: 13px 0;
+      @include w1023 {
+        padding: 10px 0;
+      }
     }
   }
   &__form {
@@ -57,6 +121,12 @@
       rgba(67, 163, 183, 0.05) 24%,
       rgba(41, 44, 200, 0.05) 102.29%
     );
+    @include w1023 {
+      padding: 19px 0;
+    }
+    @include w767 {
+      padding: 15px 0;
+    }
   }
   &-form {
     &:before,
@@ -91,19 +161,44 @@
     &__container {
       display: flex;
       align-items: center;
+      @include w767 {
+        display: block;
+      }
     }
     &__text {
       margin: 0;
       font-weight: normal;
       font-size: 20px;
       line-height: 130%;
+      @include w1023 {
+        font-size: 15px;
+      }
+      @include w767 {
+        margin-bottom: 20px;
+      }
     }
     &__arr {
       flex: 1;
+      height: 12px;
       margin: 0 52px;
+      background: url('../images/icon-arr-services.svg') right center/cover no-repeat;
+      @include w1023 {
+        margin: 0 30px;
+      }
+      @include w767 {
+        display: none;
+      }
     }
     &__btn {
       padding: 13px 26px;
+      @include w1023 {
+        padding: 10px 37px;
+        white-space: nowrap;
+      }
+      @include w767 {
+        width: 100%;
+        padding: 10px 0;
+      }
     }
   }
 }

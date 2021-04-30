@@ -2,46 +2,114 @@
   height: 567px;
   margin-bottom: 148px;
   background: url('../images/about.svg') center bottom repeat-x;
+  overflow: hidden;
+  @include w1023 {
+    height: auto;
+    min-height: 298px;
+    margin-bottom: 113px;
+    background: url('../images/about-tablet.png') left top 36px repeat-x;
+  }
+  @include w767 {
+    position: relative;
+    padding-top: 62px;
+    background: url('../images/about-mobile.png') left top 78px repeat-x;
+  }
   &__container {
     display: flex;
     justify-content: space-between;
     height: 100%;
+    @include w767 {
+      flex-direction: column-reverse;
+    }
   }
   &__col {
     &:first-child {
       max-width: 710px;
+      @include w1023 {
+        max-width: 450px;
+      }
     }
     &:last-child {
       display: flex;
       align-items: flex-end;
+      flex: 0 0 383px;
+      @include w1023 {
+        flex: 0 0 183px;
+      }
+      @include w767 {
+        width: 225px;
+        transform: translateX(-20px) scaleX(-1);
+        margin-bottom: 89px;
+      }
     }
   }
   &__img {
     transform: translateX(91px);
     margin-bottom: 1px;
+    @include w1023 {
+      transform: translate(-18px, -44px);
+    }
+    @include w767 {
+      transform: none;
+    }
   }
   &__title {
     margin-bottom: 84px;
+    @include w1023 {
+      margin-bottom: 55px;
+    }
+    @include w767 {
+      position: absolute;
+      top: 0;
+    }
   }
   &__text {
     margin-bottom: 68px;
     font-size: 18px;
     line-height: 130%;
+    @include w1023 {
+      margin-bottom: 35px;
+      font-size: 13px;
+      line-height: 17px;
+    }
+    @include w767 {
+      margin-bottom: 44px;
+    }
   }
   &__navigation {
     display: flex;
     margin-bottom: 27px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      margin-bottom: 22px;
+    }
+    @include w767 {
+      transform: translateX(-15px);
+      width: 100vw;
+      padding: 0 15px;
+      overflow-x: auto;
+    }
+    &:after {
+      @include w767 {
+        content: '';
+        flex: 0 0 15px;
+      }
+    }
   }
   &-navigation {
     &__item {
-      margin-right: 41px;
+      &:not(:last-child) {
+        margin-right: 41px;
+        @include w1023 {
+          margin-right: 31px;
+        }
+      }
       &:first-child:last-child .about-navigation__btn {
         pointer-events: none;
         color: $neutral-color-1 !important;
         cursor: auto;
-        &:before{
+        &:before {
           width: 0;
         }
       }
@@ -56,11 +124,15 @@
       font-size: 20px;
       line-height: 130%;
       cursor: pointer;
+      white-space: nowrap;
+      @include w1023 {
+        font-size: 15px;
+      }
       &:hover,
       &:focus {
         color: $primary-color;
       }
-      &:before{
+      &:before {
         content: '';
         position: absolute;
         bottom: 0;
@@ -68,11 +140,11 @@
         width: 0;
         height: 1px;
         background-color: $primary-color;
-        transition: width ease .2s;
+        transition: width ease 0.2s;
       }
       &.tabs__btn--active {
         color: $primary-color;
-        &:before{
+        &:before {
           width: 100%;
         }
       }
@@ -83,6 +155,11 @@
     margin-bottom: 28px;
     font-size: 18px;
     line-height: 130%;
+    @include w1023 {
+      margin-bottom: 0;
+      font-size: 13px;
+      line-height: 17px;
+    }
     &.tabs__container--active {
       display: block;
     }

@@ -1,6 +1,12 @@
 .footer {
   position: relative;
   padding: 35px 0 35px;
+  @include w1023 {
+    padding: 31px 0 32px;
+  }
+  @include w767 {
+    padding: 77px 0 73px;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -20,6 +26,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include w767 {
+      flex-direction: column;
+    }
   }
   &__logo {
     display: flex;
@@ -29,6 +38,10 @@
     }
     svg {
       max-width: 100%;
+      @include w1023 {
+        height: 20px;
+        width: auto;
+      }
       path {
         transition: 0.2s;
       }
@@ -36,21 +49,40 @@
   }
   &__nav {
     margin-left: 19px;
+    @include w767 {
+      margin-top: 41px;
+      margin-bottom: 36px;
+      margin-left: 0;
+    }
   }
   &__list {
     display: flex;
     align-items: center;
     padding-left: 0;
     list-style: none;
+    @include w767 {
+      flex-direction: column;
+    }
   }
   &-list {
     &__item {
       &:not(:last-child) {
         margin-right: 33.4px;
+        @include w1023 {
+          margin-right: 20px;
+        }
+        @include w767 {
+          margin-right: 0;
+          margin-bottom: 18px;
+        }
       }
     }
     &__link {
       font-weight: normal;
+      @include w1023 {
+        font-weight: 300;
+        font-size: 13px;
+      }
       &:hover,
       &:focus {
         color: $primary-color;
@@ -61,5 +93,11 @@
     font-size: 14px;
     line-height: 18px;
     color: $neutral-color-5;
+    @include w1023 {
+      font-size: 13px;
+    }
+    @include w767 {
+      font-size: 14px;
+    }
   }
 }
