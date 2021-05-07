@@ -340,7 +340,7 @@ class Init {
               }
             })
 
-            item.noUiSlider.on('update', function (values, handle) {
+            item.noUiSlider.on('slide', function (values, handle) {
               ;(handle ? maxInput : minInput).value = values[handle]
             })
 
